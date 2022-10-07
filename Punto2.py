@@ -40,8 +40,9 @@ with open("data.csv") as f:
 with open("lista.csv","w") as file:
     escritor = csv.writer(file)
     for row in acc:
-        if(escuela == "n" and comp == True):
-            escritor.writerow((row[0],row[1],row[2],row[3],row[4],row[5]))
+        if(row[1] == "No"):
+            if(escuela == "n" and comp == True):
+                escritor.writerow((row[0],row[1],row[2],row[3],row[4],row[5]))
     
         
 
