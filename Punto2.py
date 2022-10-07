@@ -1,6 +1,5 @@
 from asyncore import write
 import csv
-comp = False
 print("Solo escribir s para sí, n para no")
 escuela = input("¿Quiere un vecindario con escuela? ")
 gimnasio = input("¿Quiere un vecindario con gimansio? ")
@@ -41,8 +40,55 @@ with open("lista.csv","w") as file:
     escritor = csv.writer(file)
     for row in acc:
         if(row[1] == "No"):
-            if(escuela == "n" and comp == True):
-                escritor.writerow((row[0],row[1],row[2],row[3],row[4],row[5]))
+            if(escuela == "n"):
+                a = 'Sin escuela'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[1]))
+        if(row[1] == "Si"):
+            if(escuela == "s"):
+                a = 'Con escuela'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[1]))
+        if(row[2] == "No"):
+            if(gimnasio=="n"):
+                a = 'Sin gimnasio'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[2]))
+        if(row[2] == "Si"):
+            if(gimnasio == "s"):
+                a = 'Con gimnasio'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[2]))
+        if(row[3] == "Si"):
+            if(bar=="s"):
+                a = 'Con bar'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[3]))
+        if(row[3] == "No"):
+            if(bar=="n"):
+                a = 'Sin bar'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[3]))
+        if(row[4] == "Si"):
+            if(tienda=="s"):
+                a = 'Con tienda'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[4]))
+        if(row[4] == "No"):
+            if(tienda=="n"):
+                a = 'Sin tienda'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[4]))
+        if(row[5] == "Si"):
+            if(parque=="s"):
+                a = 'Con parque'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[5]))
+        if(row[5] == "No"):
+            if(parque=="n"):
+                a = 'Sin parque'
+                escritor.writerow((a,))
+                escritor.writerow((row[0],row[5]))
     
         
 
