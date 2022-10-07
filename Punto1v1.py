@@ -83,14 +83,22 @@ class ListaEnlazada:
     
 Milista = ListaEnlazada()
 
-Milista.añadir(1)
-Milista.añadir(2)
-Milista.añadir(3)
-Milista.añadir(4)
+i=False
+inic = int(input("Escriba su numero: "))
+Milista.añadir(inic)
+term = int(input("Termino de escribir? 1.Si,2.No: "))
+if(term == 1):
+        i = True
+while(i == False):
+    a = int(input("Escriba su numero: "))
+    Milista.añadir(a)
+    term = int(input("Termino de escribir? 1.Si,2.No: "))
+    if(term == 1):
+        i = True
+
 Milista.añadir(None)
 
 
 
-print(Milista.sumar(1))
-print(Milista.multiplicacion(1))
-#print(Milista)
+print(Milista.sumar(inic))
+print(Milista.multiplicacion(inic))
